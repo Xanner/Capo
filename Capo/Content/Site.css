@@ -1,13 +1,13 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
-    background-color: #404040;
+    padding-top: 30px;
+    background-color: #ffffff;
+    overflow: hidden;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -25,15 +25,39 @@ textarea {
 }
 
 .navbar {
-    background-color: #191919;
+    background-color: #ffffff;
+    position: fixed;
+    height: 50px;
+    width: 100%;
+    box-shadow: 0 2px 2px #333333; 
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #E51B23;
+    font-size: 18px;
 }
 
 a {
     font-family: Arial;
-    color: #646464;
+    color: #333;
 }
 
 .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
-    color: #d3d3d3;
+    color: #8b0000;
     background-color: transparent;
+}
+
+.map-container {
+    left: 0;
+    top: 50px;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.navbar-logo {
+    padding-top: 3px;
+    width: 60%;
+    height: 60%;
 }

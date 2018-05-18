@@ -55,8 +55,8 @@ function addYourLocationButton(map, marker) {
                     position: latlng,
                     content:
                         "<h3>Twoja lokalizacja</h3>" +
-                            "<h4>Latitude: " + position.coords.latitude + "</h4>" +
-                            "<h4>Longitude: " + position.coords.longitude + "</h4>"
+                        "<h4>Latitude: " + position.coords.latitude + "</h4>" +
+                        "<h4>Longitude: " + position.coords.longitude + "</h4>"
                 });
 
                 map.setCenter(latlng, infowindow);
@@ -81,7 +81,7 @@ function smoothZoom(mapName, targetZoom, currentZoom) {
             window.google.maps.event.removeListener(changedZoom);
             smoothZoom(mapName, targetZoom, currentZoom + 1);
         });
-        setTimeout(function () { mapName.setZoom(currentZoom) }, 100);
+        setTimeout(function () { mapName.setZoom(currentZoom); }, 100);
     }
 }
 
@@ -90,12 +90,224 @@ function initMap() {
 
     map = new window.google.maps.Map(document.getElementById("map"), {
         zoom: 8,
-        center: cracovGeoLocation
+        center: cracovGeoLocation,
+        styles:
+            [
+                {
+                    "elementType": "geometry",
+                    "stylers": [
+                        {
+                            "color": "#f5f5f5"
+                        }
+                    ]
+                },
+                {
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                        {
+                            "color": "#e51b23"
+                        }
+                    ]
+                },
+                {
+                    "elementType": "labels.icon",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                },
+                {
+                    "elementType": "labels.text.fill",
+                    "stylers": [
+                        {
+                            "color": "#616161"
+                        }
+                    ]
+                },
+                {
+                    "elementType": "labels.text.stroke",
+                    "stylers": [
+                        {
+                            "color": "#f5f5f5"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "administrative",
+                    "elementType": "geometry",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "administrative.land_parcel",
+                    "elementType": "labels.text.fill",
+                    "stylers": [
+                        {
+                            "color": "#bdbdbd"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "poi",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "poi",
+                    "elementType": "geometry",
+                    "stylers": [
+                        {
+                            "color": "#eeeeee"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "poi",
+                    "elementType": "labels.text.fill",
+                    "stylers": [
+                        {
+                            "color": "#757575"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "poi.park",
+                    "elementType": "geometry",
+                    "stylers": [
+                        {
+                            "color": "#e5e5e5"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "poi.park",
+                    "elementType": "labels.text.fill",
+                    "stylers": [
+                        {
+                            "color": "#9e9e9e"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road",
+                    "elementType": "geometry",
+                    "stylers": [
+                        {
+                            "color": "#ffffff"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road",
+                    "elementType": "labels.icon",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road.arterial",
+                    "elementType": "labels.text.fill",
+                    "stylers": [
+                        {
+                            "color": "#757575"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road.highway",
+                    "elementType": "geometry",
+                    "stylers": [
+                        {
+                            "color": "#dadada"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road.highway",
+                    "elementType": "labels.text.fill",
+                    "stylers": [
+                        {
+                            "color": "#616161"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road.local",
+                    "elementType": "labels.text.fill",
+                    "stylers": [
+                        {
+                            "color": "#9e9e9e"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "transit",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "transit.line",
+                    "elementType": "geometry",
+                    "stylers": [
+                        {
+                            "color": "#e5e5e5"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "transit.station",
+                    "elementType": "geometry",
+                    "stylers": [
+                        {
+                            "color": "#eeeeee"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "water",
+                    "elementType": "geometry",
+                    "stylers": [
+                        {
+                            "color": "#c9c9c9"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "water",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                        {
+                            "color": "#ffffff"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "water",
+                    "elementType": "labels.text.fill",
+                    "stylers": [
+                        {
+                            "color": "#9e9e9e"
+                        }
+                    ]
+                }
+            ]
     });
 
     var myMarker = new window.google.maps.Marker({
         map: map,
-        animation: window.google.maps.Animation.DROP,
+        animation: window.google.maps.Animation.DROP
     });
 
     var icon = {
@@ -104,38 +316,47 @@ function initMap() {
     };
 
     myMarker.setIcon(icon);
+    getPlaces();
+
 
     addYourLocationButton(map, myMarker);
 
-    getPlaces();
 }
 
 function getPlaces() {
-    var data = [
-        { "Id": 1, "PlaceName": "Kraków", "GeoLong": "50.0647", "GeoLat": "19.945" }
-    ];
 
-    // Using the JQuery "each" selector to iterate through the JSON list and drop marker pins
-    $.each(data,
-        function (i, item) {
-            var marker = new window.google.maps.Marker({
-                'position': new window.google.maps.LatLng(item.GeoLong, item.GeoLat),
-                'map': map,
-                'title': item.PlaceName
+    $(function () {
+        $.getJSON("/Home/GetPlaces",
+            function (places) {
+                $.each(places,
+                    function (i, item) {
+                        var marker = new window.google.maps.Marker({
+                            position: new window.google.maps.LatLng(item.Longitude, item.Latitude),
+                            map: map,
+                            title: item.Name
+                        });
+
+
+                        // Make the marker-pin blue!
+                        marker.setIcon("http://maps.google.com/mapfiles/ms/icons/blue-dot.png");
+
+                        // put in some information about each json object - in this case, the opening hours.
+                        var infowindow = new window.google.maps.InfoWindow({
+                            content: item.Description
+                        });
+
+                        // finally hook up an "OnClick" listener to the map so it pops up out info-window when the marker-pin is clicked!
+                        window.google.maps.event.addListener(marker,
+                            "click",
+                            function () {
+                                infowindow.open(map, marker);
+                            });
+                    });
             });
-
-            // Make the marker-pin blue!
-            marker.setIcon("http://maps.google.com/mapfiles/ms/icons/blue-dot.png");
-
-            // finally hook up an "OnClick" listener to the map so it pops up out info-window when the marker-pin is clicked!
-            window.google.maps.event.addListener(marker,
-                "click",
-                function () {
-                    infowindow.open(map, marker);
-                });
-        });
+    });
+    // Using the JQuery "each" selector to iterate through the JSON list and drop marker pins
 }
 
-$(document).ready(function (e) {
+$(document).ready(function () {
     initMap();
 });
