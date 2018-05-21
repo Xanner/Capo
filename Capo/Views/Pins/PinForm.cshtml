@@ -1,0 +1,21 @@
+﻿@model Capo.Models.Pin
+
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Save", "Pins"))
+{
+    <div class="form-group">
+        @Html.LabelFor(p => p.Name)
+        @Html.TextBoxFor(p => p.Name, new { @class = "form-control"})
+        @Html.ValidationMessageFor(p => p.Name)
+    </div>    
+
+    @Html.AntiForgeryToken()
+}
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+}

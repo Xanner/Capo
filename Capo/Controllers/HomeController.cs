@@ -13,11 +13,11 @@ namespace Capo.Controllers
             _context = new ApplicationDbContext();
         }
 
-        // GET: Home/GetPlaces
+        // GET: Home/GetPins
         [HttpGet]
-        public JsonResult GetPlaces()
+        public JsonResult GetPins()
         {
-            return Json(_context.Places.ToList(), JsonRequestBehavior.AllowGet);
+            return Json(_context.Pins.ToList(), JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult Index()

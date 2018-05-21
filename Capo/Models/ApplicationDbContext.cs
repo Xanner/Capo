@@ -16,7 +16,5 @@ namespace Capo.Models
         {
             return new ApplicationDbContext();
         }
-
-        public System.Data.Entity.DbSet<Capo.Models.Place> Places { get; set; }
     }
 }

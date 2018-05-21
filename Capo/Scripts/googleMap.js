@@ -69,7 +69,7 @@ function addYourLocationButton(map, marker) {
     });
 
     controlDiv.index = 1;
-    map.controls[window.google.maps.ControlPosition.RIGHT_BOTTOM].push(controlDiv);
+    map.controls[window.google.maps.ControlPosition.RIGHT_TOP].push(controlDiv);
 }
 
 function smoothZoom(mapName, targetZoom, currentZoom) {
@@ -90,6 +90,15 @@ function initMap() {
 
     map = new window.google.maps.Map(document.getElementById("map"), {
         zoom: 8,
+        zoomControl: true,
+        zoomControlOptions: {
+            position: window.google.maps.ControlPosition.RIGHT_TOP
+        },
+        streetViewControl: true,
+        streetViewControlOptions: {
+            position: google.maps.ControlPosition.RIGHT_TOP
+        },
+        mapTypeControl: false,
         center: cracovGeoLocation,
         styles:
             [
@@ -307,7 +316,7 @@ function initMap() {
 
     var myMarker = new window.google.maps.Marker({
         map: map,
-        animation: window.google.maps.Animation.DROP
+        animation: window.google.maps.Animation.BOUNCE
     });
 
     var icon = {
@@ -326,7 +335,7 @@ function initMap() {
 function getPlaces() {
 
     $(function () {
-        $.getJSON("/Home/GetPlaces",
+        $.getJSON("/Home/GetPins",
             function (places) {
                 $.each(places,
                     function (i, item) {
