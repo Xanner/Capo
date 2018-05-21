@@ -1,4 +1,4 @@
-﻿@model Capo.Models.Pin
+﻿@model Capo.ViewModels.PinFormViewModel
 
 @{
     ViewBag.Title = "New";
@@ -13,7 +13,28 @@
         @Html.ValidationMessageFor(p => p.Name)
     </div>    
 
+    <div class="form-group">
+        @Html.LabelFor(p => p.Longitude)
+        @Html.TextBoxFor(p => p.Longitude, new { @class = "form-control"})
+        @Html.ValidationMessageFor(p => p.Longitude)
+    </div> 
+
+    <div class="form-group">
+        @Html.LabelFor(p => p.Latitude)
+        @Html.TextBoxFor(p => p.Latitude, new { @class = "form-control"})
+        @Html.ValidationMessageFor(p => p.Latitude)
+    </div> 
+
+    <div class="form-group">
+        @Html.LabelFor(p => p.Description)
+        @Html.TextBoxFor(p => p.Description, new { @class = "form-control"})
+        @Html.ValidationMessageFor(p => p.Description)
+    </div> 
+
+    @Html.HiddenFor(p => p.Id)
     @Html.AntiForgeryToken()
+
+    <button type="submit" class="btn btn-primary">Zapisz</button>
 }
 
 @section scripts{

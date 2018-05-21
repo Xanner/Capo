@@ -335,7 +335,7 @@ function initMap() {
 function getPlaces() {
 
     $(function () {
-        $.getJSON("/Home/GetPins",
+        $.getJSON("/Pins/GetPins",
             function (places) {
                 $.each(places,
                     function (i, item) {

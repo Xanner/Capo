@@ -1,4 +1,6 @@
 ﻿using Capo.Models;
+using Capo.ViewModels;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace Capo.Controllers
@@ -12,9 +14,18 @@ namespace Capo.Controllers
             _context = new ApplicationDbContext();
         }
 
+        // GET: Home/GetPins
+        [HttpGet]
+        public JsonResult GetPins()
+        {
+            return Json(_context.Pins.ToList(), JsonRequestBehavior.AllowGet);
+        }
+
         public ActionResult New()
         {
-            return View("PinForm");
+            var viewModel = new PinFormViewModel();
+
+            return View("PinForm", viewModel);
         }
 
         [HttpPost]

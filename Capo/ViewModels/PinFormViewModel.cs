@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Capo.Models
+namespace Capo.ViewModels
 {
-    public class Pin
+    public class PinFormViewModel
     {
         public int Id { get; set; }
 
@@ -17,5 +17,10 @@ namespace Capo.Models
 
         [Required]
         public string Description { get; set; }
+
+        public PinFormViewModel()
+        {
+            Id = 0;
+        }
     }
 }

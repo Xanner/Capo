@@ -240,6 +240,10 @@
     <Compile Include="Migrations\201805211826230_RenamePlaceModelToPinModel.Designer.cs">
       <DependentUpon>201805211826230_RenamePlaceModelToPinModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805211858453_AddRequiredAtributesToPinModel.cs" />
+    <Compile Include="Migrations\201805211858453_AddRequiredAtributesToPinModel.Designer.cs">
+      <DependentUpon>201805211858453_AddRequiredAtributesToPinModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -250,6 +254,7 @@
     <Compile Include="ViewModels\ForgotViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\ManageViewModels.cs" />
+    <Compile Include="ViewModels\PinFormViewModel.cs" />
     <Compile Include="ViewModels\RegisterViewModel.cs" />
     <Compile Include="ViewModels\ResetPasswordViewModel.cs" />
     <Compile Include="ViewModels\SendCodeViewModel.cs" />
@@ -362,6 +367,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805211826230_RenamePlaceModelToPinModel.resx">
       <DependentUpon>201805211826230_RenamePlaceModelToPinModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805211858453_AddRequiredAtributesToPinModel.resx">
+      <DependentUpon>201805211858453_AddRequiredAtributesToPinModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
