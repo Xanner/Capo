@@ -1,37 +1,35 @@
 ﻿@model Capo.ViewModels.PinFormViewModel
 
-@{
-    ViewBag.Title = "New";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+<h1>Dodaj pinezkę</h1>
 
 @using (Html.BeginForm("Save", "Pins"))
 {
     <div class="form-group">
         @Html.LabelFor(p => p.Name)
-        @Html.TextBoxFor(p => p.Name, new { @class = "form-control"})
+        @Html.TextBoxFor(p => p.Name, new { @class = "form-control" })
         @Html.ValidationMessageFor(p => p.Name)
-    </div>    
+    </div>
 
     <div class="form-group">
         @Html.LabelFor(p => p.Longitude)
-        @Html.TextBoxFor(p => p.Longitude, new { @class = "form-control"})
+        @Html.TextBoxFor(p => p.Longitude, new { @class = "form-control" })
         @Html.ValidationMessageFor(p => p.Longitude)
-    </div> 
+    </div>
 
     <div class="form-group">
         @Html.LabelFor(p => p.Latitude)
-        @Html.TextBoxFor(p => p.Latitude, new { @class = "form-control"})
+        @Html.TextBoxFor(p => p.Latitude, new { @class = "form-control" })
         @Html.ValidationMessageFor(p => p.Latitude)
-    </div> 
+    </div>
 
     <div class="form-group">
         @Html.LabelFor(p => p.Description)
-        @Html.TextBoxFor(p => p.Description, new { @class = "form-control"})
+        @Html.TextBoxFor(p => p.Description, new { @class = "form-control" })
         @Html.ValidationMessageFor(p => p.Description)
-    </div> 
+    </div>
 
     @Html.HiddenFor(p => p.Id)
+    @Html.HiddenFor(u => u.ApplicationUserId)
     @Html.AntiForgeryToken()
 
     <button type="submit" class="btn btn-primary">Zapisz</button>
@@ -40,3 +38,4 @@
 @section scripts{
     @Scripts.Render("~/bundles/jqueryval")
 }
+

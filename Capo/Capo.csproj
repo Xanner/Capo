@@ -47,6 +47,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -228,10 +229,6 @@
     <Compile Include="Migrations\201805172203249_AddDescriptionToPlaceModel.Designer.cs">
       <DependentUpon>201805172203249_AddDescriptionToPlaceModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201805172213525_TestPlaces.cs" />
-    <Compile Include="Migrations\201805172213525_TestPlaces.Designer.cs">
-      <DependentUpon>201805172213525_TestPlaces.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201805211823331_DeleteUnecesaryPinModel.cs" />
     <Compile Include="Migrations\201805211823331_DeleteUnecesaryPinModel.Designer.cs">
       <DependentUpon>201805211823331_DeleteUnecesaryPinModel.cs</DependentUpon>
@@ -243,6 +240,14 @@
     <Compile Include="Migrations\201805211858453_AddRequiredAtributesToPinModel.cs" />
     <Compile Include="Migrations\201805211858453_AddRequiredAtributesToPinModel.Designer.cs">
       <DependentUpon>201805211858453_AddRequiredAtributesToPinModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805230112064_AddConstraintToPinModelAndApplicationUser.cs" />
+    <Compile Include="Migrations\201805230112064_AddConstraintToPinModelAndApplicationUser.Designer.cs">
+      <DependentUpon>201805230112064_AddConstraintToPinModelAndApplicationUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805230137394_AddForeignKeyToPinModel.cs" />
+    <Compile Include="Migrations\201805230137394_AddForeignKeyToPinModel.Designer.cs">
+      <DependentUpon>201805230137394_AddForeignKeyToPinModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -328,7 +333,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
     <Content Include="Views\Map\Index.cshtml" />
-    <Content Include="Views\Pins\PinForm.cshtml" />
+    <Content Include="Views\Pins\_PinForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -359,9 +364,6 @@
     <EmbeddedResource Include="Migrations\201805172203249_AddDescriptionToPlaceModel.resx">
       <DependentUpon>201805172203249_AddDescriptionToPlaceModel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805172213525_TestPlaces.resx">
-      <DependentUpon>201805172213525_TestPlaces.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805211823331_DeleteUnecesaryPinModel.resx">
       <DependentUpon>201805211823331_DeleteUnecesaryPinModel.cs</DependentUpon>
     </EmbeddedResource>
@@ -370,6 +372,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805211858453_AddRequiredAtributesToPinModel.resx">
       <DependentUpon>201805211858453_AddRequiredAtributesToPinModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805230112064_AddConstraintToPinModelAndApplicationUser.resx">
+      <DependentUpon>201805230112064_AddConstraintToPinModelAndApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805230137394_AddForeignKeyToPinModel.resx">
+      <DependentUpon>201805230137394_AddForeignKeyToPinModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

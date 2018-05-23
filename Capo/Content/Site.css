@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 30px;
     background-color: #ffffff;
+    overflow: hidden;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -63,10 +64,14 @@ a {
 }
 
 .user-panel-container {
-    left: 0;
-    top: 50px;
-    bottom: 0;
-    position: sticky;
-    font-size: 80px;
+    left: 20px;
+    top: 70px;
+    padding-left: 10px;
+    background: #ffffff;
+    border-radius: 4px;
+    box-shadow: 5px 6px 5px #333333;
+    width: 300px;
+    height: 420px;
+    position: absolute;
     z-index: 2;
 }

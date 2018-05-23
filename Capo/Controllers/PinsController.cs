@@ -1,5 +1,7 @@
 ﻿using Capo.Models;
 using Capo.ViewModels;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -7,25 +9,34 @@ namespace Capo.Controllers
 {
     public class PinsController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly ApplicationDbContext _applicationDbContext;
+        private readonly UserStore<ApplicationUser> _userStoreContext;
 
         public PinsController()
         {
-            _context = new ApplicationDbContext();
+            _userStoreContext = new UserStore<ApplicationUser>(new ApplicationDbContext());
+            _applicationDbContext = new ApplicationDbContext();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            _applicationDbContext.Dispose();
         }
 
         // GET: Home/GetPins
         [HttpGet]
         public JsonResult GetPins()
         {
-            return Json(_context.Pins.ToList(), JsonRequestBehavior.AllowGet);
+            return Json(_applicationDbContext.Pins.ToList(), JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult New()
         {
             var viewModel = new PinFormViewModel();
+            var currentUserId = User.Identity.GetUserId();
+            viewModel.ApplicationUserId = _userStoreContext.Users.FirstOrDefault(u => u.Id == currentUserId)?.Id;
 
-            return View("PinForm", viewModel);
+            return PartialView("_PinForm", viewModel);
         }
 
         [HttpPost]
@@ -33,16 +44,16 @@ namespace Capo.Controllers
         public ActionResult Save(Pin pin)
         {
             if (!ModelState.IsValid)
-                return View("PinForm", pin);
+                return RedirectToAction("New", "Pins");
 
             if (pin.Id == 0)
             {
-                _context.Pins.Add(pin);
+                _applicationDbContext.Pins.Add(pin);
             }
 
-            _context.SaveChanges();
+            _applicationDbContext.SaveChanges();
 
-            return RedirectToAction("New", "Pins");
+            return RedirectToAction("Index", "Map");
         }
     }
 }

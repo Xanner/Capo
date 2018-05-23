@@ -106,7 +106,7 @@ function initMap() {
                     "elementType": "geometry",
                     "stylers": [
                         {
-                            "color": "#f5f5f5"
+                            "color": "#e2a7a8"
                         }
                     ]
                 },
@@ -114,7 +114,7 @@ function initMap() {
                     "elementType": "geometry.fill",
                     "stylers": [
                         {
-                            "color": "#e51b23"
+                            "color": "#d59598"
                         }
                     ]
                 },
@@ -290,15 +290,6 @@ function initMap() {
                     "stylers": [
                         {
                             "color": "#c9c9c9"
-                        }
-                    ]
-                },
-                {
-                    "featureType": "water",
-                    "elementType": "geometry.fill",
-                    "stylers": [
-                        {
-                            "color": "#ffffff"
                         }
                     ]
                 },

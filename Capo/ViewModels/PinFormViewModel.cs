@@ -18,6 +18,8 @@ namespace Capo.ViewModels
         [Required]
         public string Description { get; set; }
 
+        public string ApplicationUserId { get; set; }
+
         public PinFormViewModel()
         {
             Id = 0;

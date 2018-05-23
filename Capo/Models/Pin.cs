@@ -17,5 +17,9 @@ namespace Capo.Models
 
         [Required]
         public string Description { get; set; }
+
+        public string ApplicationUserId { get; set; }
+
+        //public ApplicationUser ApplicationUser { get; set; }
     }
 }

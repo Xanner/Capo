@@ -7,13 +7,13 @@ namespace Capo.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class TestPlaces : IMigrationMetadata
+    public sealed partial class AddForeignKeyToPinModel : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(TestPlaces));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddForeignKeyToPinModel));
         
         string IMigrationMetadata.Id
         {
-            get { return "201805172213525_TestPlaces"; }
+            get { return "201805230137394_AddForeignKeyToPinModel"; }
         }
         
         string IMigrationMetadata.Source
