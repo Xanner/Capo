@@ -354,7 +354,6 @@ function getPlaces() {
                     });
             });
     });
-    // Using the JQuery "each" selector to iterate through the JSON list and drop marker pins
 }
 
 $(document).ready(function () {
