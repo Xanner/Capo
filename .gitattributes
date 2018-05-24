@@ -37,7 +37,7 @@
 
 ###############################################################################
 # behavior for image files
-#
+*.rb linguist-language=CSharp
 # image files are treated as binary by default.
 ###############################################################################
 #*.jpg   binary
